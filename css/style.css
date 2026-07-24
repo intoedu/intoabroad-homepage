@@ -293,6 +293,80 @@ a { color: inherit; text-decoration: none; }
 
 .prog-card .btn { margin-top: auto; text-align: center; }
 
+.prog-actions { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+.prog-actions .btn { flex: 1 1 auto; text-align: center; padding: 12px 16px; font-size: 15px; }
+
+/* ---------- 캠프 상세 페이지 (밝은 본문) ---------- */
+
+.detail-main {
+  --navy: #17335c;
+  --navy-light: #33507d;
+  --navy-50: #eef3fb;
+  --orange: #1c5fc6;          /* 인투유학 포인트 = 블루 */
+  --orange-light: #e7f0fb;
+  --text: #242a33;
+  --text-sub: #3c4450;
+  --text-light: #7b8494;
+  --bg-alt: #f1f4f9;
+  --border: #e3e8f0;
+  background: #fff;
+  color: var(--text);
+}
+.detail-main .btn-ghost { border-color: var(--border); color: var(--navy); }
+.detail-main .btn-ghost:hover { border-color: var(--navy); }
+.detail-main a { color: var(--orange); font-weight: 600; }
+
+.detail-body { max-width: 860px; margin: 0 auto; }
+.detail-body h2, .detail-body h3, .detail-body h4 { color: var(--navy); }
+
+.dintro { margin: 0 0 8px; }
+.dintro h2 { font-size: 24px; font-weight: 800; margin: 0 0 12px; }
+.dintro p { color: var(--text-sub); font-size: 15px; line-height: 1.85; margin: 0; }
+
+.dsec { margin-top: 40px; }
+.dsec h3 { font-size: 20px; font-weight: 800; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--navy-50); }
+
+.dcards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 20px 0; }
+.dcard { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.dci { font-size: 26px; margin-bottom: 8px; }
+.dct { font-weight: 800; color: var(--navy); margin-bottom: 4px; font-size: 15px; }
+.dcd { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+
+.dlist { list-style: none; padding: 0; margin: 0; }
+.dlist li { position: relative; padding-left: 18px; margin-bottom: 12px; font-size: 14.5px; color: var(--text-sub); line-height: 1.75; }
+.ddot { position: absolute; left: 0; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+.dtitle { display: block; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+.dsub { display: block; color: var(--text-sub); }
+
+.dinfo { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.dii { display: grid; grid-template-columns: 110px 1fr; }
+.dii + .dii { border-top: 1px solid var(--border); }
+.dil { background: var(--bg-alt); padding: 14px 16px; font-weight: 800; color: var(--navy); font-size: 14px; }
+.dii .div { padding: 14px 16px; font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+
+.dsch { display: grid; gap: 10px; }
+.dsi { display: grid; grid-template-columns: 66px 1fr; gap: 14px; background: var(--bg-alt); border-radius: 10px; padding: 14px 16px; }
+.dsit { font-weight: 800; color: var(--orange); font-size: 14px; }
+.dsic h4 { margin: 0 0 3px; font-size: 15px; }
+.dsic p { margin: 0; font-size: 13px; color: var(--text-sub); }
+
+.price-box { background: linear-gradient(135deg, var(--navy-50), var(--orange-light)); border-radius: 14px; padding: 26px; text-align: center; margin-top: 12px; }
+.pn { font-size: 38px; font-weight: 900; color: var(--orange); line-height: 1; }
+.pn span { font-size: 18px; }
+.pnote { margin-top: 8px; font-size: 13px; color: var(--text-sub); }
+
+.highlight-box { background: var(--orange-light); border-left: 4px solid var(--orange); border-radius: 10px; padding: 14px 16px; }
+.highlight-box p { margin: 0; color: var(--navy); font-weight: 600; font-size: 14px; }
+
+.detail-phone-cta { margin-top: 44px; background: var(--navy); border-radius: 16px; padding: 30px; text-align: center; }
+.detail-phone-cta h3 { color: #fff; margin: 0 0 6px; padding: 0; border: 0; font-size: 20px; }
+.detail-phone-cta p { margin: 0 0 16px; color: rgba(255, 255, 255, .82); font-size: 14px; }
+.dphone-num { font-size: 26px; font-weight: 900; color: #fff; }
+.dphone-num a { color: #fff; }
+.dphone-h { font-size: 13px; color: rgba(255, 255, 255, .82); margin-top: 2px; }
+
+.detail-back { margin-top: 40px; }
+
 /* ---------- 본문 페이지 ---------- */
 
 .page-head {
