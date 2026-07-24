@@ -367,6 +367,22 @@ a { color: inherit; text-decoration: none; }
 
 .detail-back { margin-top: 40px; }
 
+/* 캠프 일정표(캘린더) */
+.cal-wrap { overflow-x: auto; margin: 10px 0 6px; -webkit-overflow-scrolling: touch; }
+.cal-tbl { width: 100%; min-width: 660px; border-collapse: collapse; font-size: 12px; }
+.cal-tbl th, .cal-tbl td { border: 1px solid var(--border); padding: 8px 6px; text-align: center; vertical-align: top; line-height: 1.45; }
+.cal-tbl thead th { background: var(--navy); color: #fff; font-weight: 700; }
+.cal-wk-h { background: var(--navy); color: #fff; }
+.cal-num-row td { background: var(--navy-50); font-weight: 700; color: var(--navy); }
+.cal-event-row td, .cal-event-label { background: var(--orange); color: #fff; font-weight: 800; text-align: left; padding: 9px 12px; }
+.cal-empty, .cal-wk-cell { background: #fafbfc; }
+.cal-tour { background: var(--orange-light); color: var(--navy); font-weight: 600; }
+.cal-study { background: var(--bg-alt); color: var(--text-sub); }
+.cal-rest { background: #f4f7fb; color: var(--text-sub); }
+.cal-last { background: var(--navy-50); color: var(--navy); font-weight: 700; }
+.cal-fly { background: var(--navy); color: #fff; font-weight: 800; vertical-align: middle; }
+.cal-note { font-size: 12px; color: var(--text-light); margin-top: 8px; }
+
 /* ---------- 본문 페이지 ---------- */
 
 .page-head {
