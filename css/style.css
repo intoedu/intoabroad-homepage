@@ -383,48 +383,62 @@ a { color: inherit; text-decoration: none; }
 .cal-fly { background: var(--navy); color: #fff; font-weight: 800; vertical-align: middle; }
 .cal-note { font-size: 12px; color: var(--text-light); margin-top: 8px; }
 
-/* ---------- 테두리 제거 + 그림자 기반 입체감 (기본 적용) ---------- */
+/* ---------- 테두리 제거 + 그림자 입체감 + 버튼 그라데이션 (기본 적용) ---------- */
 
-/* 어두운 페이지(홈·국가): 카드 — 사방 밝은 글로우 */
+/* 어두운 페이지(홈·국가): 카드 — 아래로 드리운 밝은 그림자 + 상단 하이라이트 */
 .card, .prog-card {
   border: none;
-  box-shadow: 0 0 22px rgba(255, 250, 245, .06);
+  box-shadow: 0 6px 26px rgba(255, 250, 245, .09), inset 0 1px 0 rgba(255, 250, 245, .06);
   transition: box-shadow .2s, transform .2s;
 }
 .card:hover, .prog-card:hover {
   border: none;
-  box-shadow: 0 0 34px rgba(255, 250, 245, .13);
-  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(255, 250, 245, .16), inset 0 1px 0 rgba(255, 250, 245, .09);
+  transform: translateY(-4px);
 }
 
-/* 어두운 페이지: 버튼 */
-.btn-primary, .nav .btn-sm { box-shadow: 0 0 18px rgba(47, 120, 232, .30); }
-.btn-primary:hover, .nav .btn-sm:hover { box-shadow: 0 0 26px rgba(47, 120, 232, .45); }
+/* 버튼 공통: 부드러운 전환 */
+.btn, .nav .btn-sm { transition: transform .18s, box-shadow .18s, background .18s; }
+
+/* 어두운 페이지: 파랑 버튼 — 그라데이션 + 그림자 + 상단 광택 */
+.btn-primary, .nav .btn-sm {
+  background: linear-gradient(135deg, #3a86f0, #1c5fc6);
+  box-shadow: 0 6px 18px rgba(28, 95, 198, .42), inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+.btn-primary:hover, .nav .btn-sm:hover {
+  background: linear-gradient(135deg, #4f95f5, #2464cf);
+  box-shadow: 0 10px 26px rgba(28, 95, 198, .55), inset 0 1px 0 rgba(255, 255, 255, .22);
+  transform: translateY(-2px);
+}
+
+/* 어두운 페이지: 고스트 버튼 — 은은한 밝은 그라데이션 */
 .btn-ghost {
   border: none;
-  background: rgba(255, 250, 245, .07);
-  box-shadow: 0 0 16px rgba(255, 250, 245, .05);
+  background: linear-gradient(135deg, rgba(255, 250, 245, .13), rgba(255, 250, 245, .05));
+  box-shadow: 0 6px 20px rgba(255, 250, 245, .07), inset 0 1px 0 rgba(255, 250, 245, .10);
 }
 .btn-ghost:hover {
   border: none;
-  background: rgba(255, 250, 245, .14);
-  box-shadow: 0 0 22px rgba(255, 250, 245, .12);
+  background: linear-gradient(135deg, rgba(255, 250, 245, .20), rgba(255, 250, 245, .09));
+  box-shadow: 0 10px 28px rgba(255, 250, 245, .13), inset 0 1px 0 rgba(255, 250, 245, .14);
+  transform: translateY(-2px);
 }
 
-/* 밝은 상세페이지: 흰 배경에 맞춰 어두운 그림자로 자동 전환 */
+/* 밝은 상세페이지: 흰 배경용 어두운 그림자로 자동 전환 */
 .detail-main .dcard {
   border: none;
-  box-shadow: 0 4px 16px rgba(23, 51, 92, .09);
+  box-shadow: 0 6px 20px rgba(23, 51, 92, .13);
 }
 .detail-main .btn-ghost {
   border: none;
-  background: var(--bg-alt);
+  background: linear-gradient(135deg, #ffffff, var(--bg-alt));
   color: var(--navy);
-  box-shadow: 0 2px 10px rgba(23, 51, 92, .10);
+  box-shadow: 0 4px 14px rgba(23, 51, 92, .14), inset 0 1px 0 rgba(255, 255, 255, .6);
 }
 .detail-main .btn-ghost:hover {
-  background: #e6ecf5;
-  box-shadow: 0 4px 16px rgba(23, 51, 92, .16);
+  background: linear-gradient(135deg, #ffffff, #e6ecf5);
+  box-shadow: 0 7px 20px rgba(23, 51, 92, .20), inset 0 1px 0 rgba(255, 255, 255, .7);
+  transform: translateY(-2px);
 }
 
 /* ---------- 본문 페이지 ---------- */
