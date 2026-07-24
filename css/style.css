@@ -383,6 +383,50 @@ a { color: inherit; text-decoration: none; }
 .cal-fly { background: var(--navy); color: #fff; font-weight: 800; vertical-align: middle; }
 .cal-note { font-size: 12px; color: var(--text-light); margin-top: 8px; }
 
+/* ---------- 테두리 제거 + 그림자 기반 입체감 (기본 적용) ---------- */
+
+/* 어두운 페이지(홈·국가): 카드 — 사방 밝은 글로우 */
+.card, .prog-card {
+  border: none;
+  box-shadow: 0 0 22px rgba(255, 250, 245, .06);
+  transition: box-shadow .2s, transform .2s;
+}
+.card:hover, .prog-card:hover {
+  border: none;
+  box-shadow: 0 0 34px rgba(255, 250, 245, .13);
+  transform: translateY(-3px);
+}
+
+/* 어두운 페이지: 버튼 */
+.btn-primary, .nav .btn-sm { box-shadow: 0 0 18px rgba(47, 120, 232, .30); }
+.btn-primary:hover, .nav .btn-sm:hover { box-shadow: 0 0 26px rgba(47, 120, 232, .45); }
+.btn-ghost {
+  border: none;
+  background: rgba(255, 250, 245, .07);
+  box-shadow: 0 0 16px rgba(255, 250, 245, .05);
+}
+.btn-ghost:hover {
+  border: none;
+  background: rgba(255, 250, 245, .14);
+  box-shadow: 0 0 22px rgba(255, 250, 245, .12);
+}
+
+/* 밝은 상세페이지: 흰 배경에 맞춰 어두운 그림자로 자동 전환 */
+.detail-main .dcard {
+  border: none;
+  box-shadow: 0 4px 16px rgba(23, 51, 92, .09);
+}
+.detail-main .btn-ghost {
+  border: none;
+  background: var(--bg-alt);
+  color: var(--navy);
+  box-shadow: 0 2px 10px rgba(23, 51, 92, .10);
+}
+.detail-main .btn-ghost:hover {
+  background: #e6ecf5;
+  box-shadow: 0 4px 16px rgba(23, 51, 92, .16);
+}
+
 /* ---------- 본문 페이지 ---------- */
 
 .page-head {
