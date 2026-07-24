@@ -1,0 +1,9 @@
+인투유학 홈페이지 이미지 출처 (모두 CC0 / Public Domain — 출처 표기 의무 없음)
+Openverse(openverse.org)에서 license=cc0,pdm 로 필터링해 수집.
+
+usa.jpg          Flickr (CC0)         텍사스 대학 캠퍼스
+philippines.jpg  Flickr (CC0)         필리핀 대학
+malaysia.webp    Rawpixel (CC0)       쿠알라룸푸르 스카이라인 (원본 WebP)
+uk-au.jpg        Flickr (CC0)         시드니 하버
+
+교체 시 img/ 폴더에 같은 파일명으로 덮어쓰면 됩니다.
