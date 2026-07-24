@@ -211,7 +211,7 @@ a { color: inherit; text-decoration: none; }
 
 /* 이미지 자리표시자 — 실제 사진 넣기 전까지 */
 .ph {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 10;      /* 가로형 사진: 1200×750 권장 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,6 +219,79 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
   font-size: 13px;
 }
+.ph--portrait { aspect-ratio: 3 / 4; }   /* 세로형 포스터: 900×1200 권장 */
+
+/* ---------- 프로그램 카드 ---------- */
+
+.prog-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.prog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  transition: border-color .18s, transform .18s;
+}
+.prog-card:hover { border-color: rgba(255, 250, 245, .3); transform: translateY(-3px); }
+
+.prog-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--blue-hi);
+  margin: 0 0 8px;
+}
+
+.prog-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  margin: 0 0 12px;
+}
+
+.prog-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--cream);
+  margin: 0;
+}
+.prog-price span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.prog-summary {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 16px 0 20px;
+}
+
+.prog-facts {
+  margin: 0 0 24px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+}
+.prog-facts > div {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 12px;
+  font-size: 13px;
+}
+.prog-facts dt { color: var(--muted); font-weight: 700; margin: 0; }
+.prog-facts dd { margin: 0; color: var(--cream); }
+
+.prog-card .btn { margin-top: auto; text-align: center; }
 
 /* ---------- 본문 페이지 ---------- */
 
