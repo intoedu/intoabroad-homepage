@@ -36,6 +36,12 @@ document.querySelectorAll('.prog-card[data-deadline], .prog-card[data-badge]').f
   el.textContent = ribbon[1];
   card.classList.add('has-ribbon');
   card.prepend(el);
+
+  // 마감된 카드는 '전화 상담' 버튼을 눌리지 않는 '신청 마감' 버튼으로 교체합니다.
+  if (ribbon[0] === 'closed') {
+    const tel = card.querySelector('.prog-actions a[href^="tel:"]');
+    if (tel) tel.outerHTML = '<span class="btn btn-closed">신청 마감</span>';
+  }
 });
 
 // 자기 점검: 주소 뒤에 ?selftest 를 붙이고 콘솔을 보면 경계값이 맞는지 확인됩니다.
