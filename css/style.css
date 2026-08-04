@@ -501,9 +501,15 @@ a { color: inherit; text-decoration: none; }
 }
 .page-head p { color: var(--muted); max-width: 640px; margin: 0; }
 
-/* 사진 배경 페이지 헤드 — style="--photo:url('img/usa.jpg')" 로 사진 지정 */
-.page-head--photo { position: relative; overflow: hidden; padding: 108px 0 72px; }
-.page-head--photo::before {
+/* 사진 배경 — style="--photo:url('img/usa.jpg')" 로 사진 지정.
+   페이지 헤드는 .page-head--photo, 홈 히어로는 .hero--photo 를 함께 붙입니다.
+   높이·여백은 각자 기본 클래스가 정하고 여기서는 사진 레이어만 얹습니다. */
+.page-head--photo,
+.hero--photo { position: relative; overflow: hidden; }
+.page-head--photo { padding: 108px 0 72px; }
+
+.page-head--photo::before,
+.hero--photo::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -512,13 +518,15 @@ a { color: inherit; text-decoration: none; }
   background-position: center;
   opacity: .30;
 }
-.page-head--photo::after {
+.page-head--photo::after,
+.hero--photo::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(15, 16, 21, .35) 0%, rgba(15, 16, 21, .92) 100%);
 }
-.page-head--photo .wrap { position: relative; z-index: 1; }
+.page-head--photo .wrap,
+.hero--photo .wrap { position: relative; z-index: 1; }
 
 .prose { max-width: 760px; }
 .prose h2 { font-size: 24px; margin: 44px 0 14px; }
