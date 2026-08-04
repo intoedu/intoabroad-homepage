@@ -11,13 +11,17 @@ document.querySelector('.nav-toggle')?.addEventListener('click', (e) => {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* 프로그램 카드 마감 리본.
+/* 프로그램 카드 — 마감 리본 + 지난 캠프 자동 숨김.
    data-deadline="YYYY-MM-DD" — 출발일. 회차가 여러 개인 캠프는 '마지막 회차' 출발일을 씁니다.
-     20일 전부터 '신청 마감 임박', 10일 전부터(지난 일정 포함) '신청 마감'.
+     D-20 ~ D-11 '신청 마감 임박' · D-10 ~ 당일 '신청 마감' · 출발일이 지나면 카드를 아예 내립니다.
+     출발한 캠프는 더 신청할 수 없으므로, 일정이 끝난 카드를 손으로 주석 처리할 필요가 없습니다.
    data-badge="정원 마감" — 날짜와 상관없이 직접 띄울 때. 선착순 마감 등 수동 처리용이며 날짜 계산보다 우선합니다.
-   날짜가 확정되지 않은 프로그램(기수제 등)은 두 속성 다 넣지 않으면 리본이 안 붙습니다. */
-const ribbonFor = (days) =>
-  days > 20 ? null : days > 10 ? ['soon', '신청 마감 임박'] : ['closed', '신청 마감'];
+     단 출발일이 지나면 숨김이 먼저입니다 — 이미 떠난 캠프를 광고하지 않기 위해서입니다.
+   날짜가 확정되지 않은 프로그램(기수제 등)은 두 속성 다 넣지 않으면 아무것도 붙지 않습니다. */
+const RIBBON = { soon: '신청 마감 임박', closed: '신청 마감' };
+
+const cardState = (days) =>
+  days < 0 ? 'past' : days > 20 ? 'open' : days > 10 ? 'soon' : 'closed';
 
 const daysUntil = (ymd) => {
   const [y, m, d] = ymd.split('-').map(Number);
@@ -27,18 +31,20 @@ const daysUntil = (ymd) => {
 };
 
 document.querySelectorAll('.prog-card[data-deadline], .prog-card[data-badge]').forEach((card) => {
-  const manual = card.dataset.badge;
-  const ribbon = manual ? ['closed', manual] : ribbonFor(daysUntil(card.dataset.deadline));
-  if (!ribbon) return;
+  const { deadline, badge } = card.dataset;
+  const state = deadline ? cardState(daysUntil(deadline)) : 'closed';
+
+  if (state === 'past') return card.remove();
+  if (state === 'open' && !badge) return;
 
   const el = document.createElement('span');
-  el.className = 'prog-ribbon prog-ribbon--' + ribbon[0];
-  el.textContent = ribbon[1];
+  el.className = 'prog-ribbon prog-ribbon--' + (badge ? 'closed' : state);
+  el.textContent = badge || RIBBON[state];
   card.classList.add('has-ribbon');
   card.prepend(el);
 
   // 마감된 카드는 '전화 상담' 버튼을 눌리지 않는 '신청 마감' 버튼으로 교체합니다.
-  if (ribbon[0] === 'closed') {
+  if (badge || state === 'closed') {
     const tel = card.querySelector('.prog-actions a[href^="tel:"]');
     if (tel) tel.outerHTML = '<span class="btn btn-closed">신청 마감</span>';
   }
@@ -46,12 +52,20 @@ document.querySelectorAll('.prog-card[data-deadline], .prog-card[data-badge]').f
 
 // 자기 점검: 주소 뒤에 ?selftest 를 붙이고 콘솔을 보면 경계값이 맞는지 확인됩니다.
 if (location.search.includes('selftest')) {
-  console.assert(ribbonFor(21) === null, '21일 전 — 리본 없음');
-  console.assert(ribbonFor(20)[1] === '신청 마감 임박', '20일 전 — 마감 임박');
-  console.assert(ribbonFor(11)[1] === '신청 마감 임박', '11일 전 — 마감 임박');
-  console.assert(ribbonFor(10)[1] === '신청 마감', '10일 전 — 마감');
-  console.assert(ribbonFor(0)[1] === '신청 마감', '당일 — 마감');
-  console.assert(ribbonFor(-5)[1] === '신청 마감', '지난 일정 — 마감');
+  console.assert(cardState(21) === 'open', '21일 전 — 리본 없음');
+  console.assert(cardState(20) === 'soon', '20일 전 — 마감 임박');
+  console.assert(cardState(11) === 'soon', '11일 전 — 마감 임박');
+  console.assert(cardState(10) === 'closed', '10일 전 — 마감');
+  console.assert(cardState(0) === 'closed', '출발 당일 — 마감');
+  console.assert(cardState(-1) === 'past', '출발 다음날 — 카드 숨김');
+
+  // 날짜 계산이 시간대에 밀리지 않는지. 오늘 날짜를 넣으면 반드시 0 이어야 합니다.
+  const t = new Date();
+  const pad = (n) => String(n).padStart(2, '0');
+  console.assert(
+    daysUntil(`${t.getFullYear()}-${pad(t.getMonth() + 1)}-${pad(t.getDate())}`) === 0,
+    '오늘 날짜 — 0일'
+  );
   console.log('마감 리본 자기 점검 통과');
 }
 
