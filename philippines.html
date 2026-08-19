@@ -26,7 +26,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="hd">
   <div class="wrap">
     <a class="logo" href="./"><img src="img/logo-header-dark.png" alt="인투유학"></a>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
@@ -43,19 +43,38 @@
 
 <main>
 
-  <section class="page-head page-head--photo" style="--photo:url('../img/hero-philippines.jpg')">
+  <!-- 1. 히어로 -->
+  <section class="hero" style="--photo:url('../img/hero-philippines.jpg')">
     <div class="wrap">
-      <p class="section-label">PHILIPPINES · DASMARIÑAS</p>
-      <h1>필리핀</h1>
-      <p>다양한 수준의 영어 교육 프로그램을 제공합니다. 안전하고 쾌적한 환경에서 집중적으로 영어를 학습하며 글로벌 교육을 준비할 수 있습니다.</p>
+      <span class="badge">PHILIPPINES · DASMARIÑAS</span>
+      <h1 class="t-title">필리핀</h1>
+      <p class="lead t-h5">다양한 수준의 영어 교육 프로그램을 제공합니다. 안전하고 쾌적한 환경에서<br>집중적으로 영어를 학습하며 글로벌 교육을 준비할 수 있습니다.</p>
+
+      <dl class="hero-facts">
+        <div><dt>위치</dt><dd>다스마리냐스 시티</dd></div>
+        <div><dt>프로그램</dt><dd>어학캠프 · 프렙과정</dd></div>
+        <div><dt>어학캠프 수업</dt><dd>하루 6시간</dd></div>
+        <div><dt>생활</dt><dd>관리자 동행 · 하루 3식</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="section section--alt" id="programs">
+  <nav class="anchors">
     <div class="wrap">
-      <p class="section-label">PHILIPPINES PROGRAMS</p>
-      <h2>필리핀 프로그램</h2>
-      <p class="desc">단기 어학캠프부터 미국 유학을 준비하는 장기 프렙과정까지, 원어민 집중 환경에서 진행합니다.</p>
+      <a href="#programs">필리핀 프로그램</a>
+      <a href="#city">다스마리냐스</a>
+      <a href="#care">관리 시스템</a>
+    </div>
+  </nav>
+
+  <!-- 2. 프로그램 -->
+  <section class="sec" id="programs">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">PHILIPPINES PROGRAMS</span>
+        <h2 class="t-h1">필리핀 프로그램</h2>
+        <p class="t-h6">단기 어학캠프부터 미국 유학을 준비하는 장기 프렙과정까지, 원어민 집중 환경에서 진행합니다.</p>
+      </div>
 
       <div class="prog-grid">
 
@@ -72,7 +91,7 @@
           </dl>
           <div class="prog-actions">
             <a class="btn btn-primary" href="ph-language">자세히 보기</a>
-            <a class="btn btn-ghost" href="tel:031-334-2414">전화 상담</a>
+            <a class="btn btn-line" href="tel:031-334-2414">전화 상담</a>
           </div>
         </article>
 
@@ -89,7 +108,7 @@
           </dl>
           <div class="prog-actions">
             <a class="btn btn-primary" href="ph-prep">자세히 보기</a>
-            <a class="btn btn-ghost" href="tel:031-334-2414">전화 상담</a>
+            <a class="btn btn-line" href="tel:031-334-2414">전화 상담</a>
           </div>
         </article>
 
@@ -97,53 +116,72 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap prose">
+  <!-- 3. 다스마리냐스 -->
+  <section class="sec sec--soft" id="city">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">DASMARIÑAS CITY</span>
+        <h2 class="t-h1">어떤 곳인가요</h2>
+        <p class="t-h6">수도권 접근성은 유지하면서 번잡함은 덜해, 학습에 집중하기 좋은 환경입니다.</p>
+      </div>
 
-      <h2>어떤 곳인가요</h2>
-      <p>
-        다스마리냐스(Dasmariñas)는 마닐라 남쪽 카비테주에 있는 교육 도시입니다.
-        수도권 접근성은 유지하면서 번잡함은 덜해, 학습에 집중하기 좋은 환경입니다.
-      </p>
+      <dl class="rows">
+        <div class="row"><dt>도시</dt><dd>다스마리냐스(Dasmariñas) — 마닐라 남쪽 카비테주에 있는 <strong>교육 도시</strong></dd></div>
+        <div class="row"><dt>마닐라와의 거리</dt><dd>약 <strong>30km</strong></dd></div>
+        <div class="row"><dt>환경</dt><dd>조용하고 안전한 지역. 수도권 접근성은 유지하면서 번잡함은 덜합니다.</dd></div>
+      </dl>
+    </div>
+  </section>
 
-      <h2>인투유학원의 관리형 프로그램, 이래서 믿을 수 있습니다</h2>
-      <p>
-        마닐라에서 약 30km 거리의 조용하고 안전한 다스마리나스(Dasmarinas City)에서 진행되며,
-        체계적인 관리 시스템을 통해 학생들이 학업에만 집중할 수 있는 환경을 제공합니다.
-      </p>
-      <ul>
+  <!-- 4. 관리 시스템 (어두운 강조 섹션) -->
+  <section class="sec sec--dark" id="care">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="color:#fff">STUDENT CARE</span>
+        <h2 class="t-h1">인투유학원의 관리형 프로그램,<br>이래서 믿을 수 있습니다</h2>
+        <p class="t-h6 muted">마닐라에서 약 30km 거리의 조용하고 안전한 다스마리나스(Dasmarinas City)에서 진행되며,<br>체계적인 관리 시스템을 통해 학생들이 학업에만 집중할 수 있는 환경을 제공합니다.</p>
+      </div>
+
+      <ul class="checks">
         <li>하루 3식 및 간식 제공</li>
         <li>모든 주요 일정 관리자 동행</li>
         <li>안전·건강을 위한 생활 관리 시스템 운영</li>
       </ul>
-      <p>
-        학생들은 안정적인 환경 속에서 학업과 다양한 활동에 집중하며
-        의미 있는 해외 교육 경험을 쌓을 수 있습니다.
-      </p>
 
-      <p style="margin-top:44px">
+      <p class="t-h6 muted" style="margin-top:36px">
+        학생들은 안정적인 환경 속에서 학업과 다양한 활동에 집중하며 의미 있는 해외 교육 경험을 쌓을 수 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. 상담 CTA -->
+  <section class="sec cta-sec">
+    <div class="wrap">
+      <h2 class="t-typo">필리핀,<br>우리 아이에게 맞을까요</h2>
+      <p class="t-h5 muted" style="margin-top:20px">어학캠프와 프렙과정 중 무엇이 맞을지 함께 정리해 드립니다.<br>상담은 무료이고, 신청하신다고 계약으로 이어지지 않습니다.</p>
+      <div class="btns">
         <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">필리핀 프로그램 상담 신청</a>
-      </p>
-
+        <a class="btn btn-line" href="tel:031-334-2414">031-334-2414</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
+<footer class="ft">
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-contact">
-        <a class="tel" href="tel:031-334-2414">031-334-2414</a>
-        <p class="hours">고객문의 9:00~19:00 · 일요일 제외</p>
+    <div class="ft-top">
+      <div>
+        <a class="ft-tel" href="tel:031-334-2414">031-334-2414</a>
+        <p class="ft-hours">고객문의 9:00~19:00 · 일요일 제외</p>
       </div>
-      <div class="footer-links">
-        <a class="btn btn-ghost" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡 상담</a>
-        <a class="btn btn-ghost" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">공식 블로그</a>
+      <div class="ft-links">
+        <a class="btn btn-line" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡 상담</a>
+        <a class="btn btn-line" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">공식 블로그</a>
         <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">상담 신청</a>
       </div>
     </div>
-    <div class="footer-meta">
+    <div class="ft-meta">
       인투유학 (INTO ABROAD)<br>
       주소: 경기 용인시 처인구 명지로40번길 13 205호 · 사업자등록번호: 559-18-02242<br>
       © <span id="year">2026</span> INTO ABROAD. All rights reserved.
