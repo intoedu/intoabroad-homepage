@@ -550,7 +550,35 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
 
 .highlight-box { background: var(--bg-soft); border-radius: 4px; padding: 22px 24px; }
 .highlight-box p { margin: 0; font-size: 15px; color: var(--gray-2); line-height: 1.8; }
-.price-box { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 4px; padding: 30px 28px; }
+
+/* 가격 박스 — 이 페이지에서 가장 먼저 찾는 숫자라 어둡게 깔고 크게 씁니다 */
+.price-box { background: var(--dark); color: #fff; border-radius: 4px; padding: 44px 32px; text-align: center; }
+.price-box .pn { font-size: 64px; font-weight: 800; letter-spacing: -2px; line-height: 1; }
+.price-box .pn span { font-size: 26px; margin-left: 6px; letter-spacing: -.5px; }
+.price-box .pnote { color: rgba(255, 255, 255, .62); font-size: 15px; line-height: 1.7; margin-top: 16px; }
+
+/* ---------- 일정 달력 표 ---------- */
+
+.cal-wrap { overflow-x: auto; }
+.cal-tbl { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 13px; }
+.cal-tbl th, .cal-tbl td {
+  border: 1px solid var(--line);
+  padding: 10px 8px;
+  text-align: center;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.cal-tbl th { background: var(--ink); color: #fff; font-weight: 700; }
+.cal-num-row td { background: var(--bg-soft); font-weight: 800; color: var(--gray-2); }
+.cal-study { background: rgba(10, 100, 255, .06); }
+.cal-tour { background: rgba(224, 145, 60, .14); font-weight: 700; }
+.cal-rest { background: var(--bg-soft); color: var(--gray-2); }
+.cal-event-label { background: var(--blue); color: #fff; font-weight: 800; }
+.cal-last { background: rgba(10, 100, 255, .14); font-weight: 700; }
+.cal-fly { background: var(--ink); color: #fff; font-weight: 800; }
+.cal-empty, .cal-wk-cell { background: var(--bg-soft); }
+.cal-tbl small { color: var(--gray); }
+.cal-note { font-size: 12px; color: var(--gray); margin-top: 14px; }
 
 .detail-phone-cta { background: var(--dark); color: #fff; border-radius: 4px; padding: 48px 32px; text-align: center; margin-top: 56px; }
 .detail-phone-cta h3 { font-size: 26px; font-weight: 800; margin: 0 0 10px; }
