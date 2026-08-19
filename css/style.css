@@ -511,9 +511,13 @@ a { color: inherit; text-decoration: none; }
 }
 .page-head p { color: var(--muted); max-width: 640px; margin: 0; }
 
-/* 사진 배경 — style="--photo:url('img/usa.jpg')" 로 사진 지정.
+/* 사진 배경 — style="--photo:url('../img/usa.jpg')" 로 사진 지정.
    페이지 헤드는 .page-head--photo, 홈 히어로는 .hero--photo 를 함께 붙입니다.
-   높이·여백은 각자 기본 클래스가 정하고 여기서는 사진 레이어만 얹습니다. */
+   높이·여백은 각자 기본 클래스가 정하고 여기서는 사진 레이어만 얹습니다.
+
+   경로 앞의 ../ 를 빼면 안 됩니다. var(--photo) 안의 상대경로는 HTML 이 아니라
+   이 파일(css/style.css)의 위치를 기준으로 풀리기 때문에, 'img/usa.jpg' 라고 쓰면
+   /css/img/usa.jpg 를 찾다가 404 가 나고 사진 없이 그라데이션만 보입니다. */
 .page-head--photo,
 .hero--photo { position: relative; overflow: hidden; }
 .page-head--photo { padding: 108px 0 72px; }
