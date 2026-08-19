@@ -557,6 +557,18 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
 .price-box .pn span { font-size: 26px; margin-left: 6px; letter-spacing: -.5px; }
 .price-box .pnote { color: rgba(255, 255, 255, .62); font-size: 15px; line-height: 1.7; margin-top: 16px; }
 
+/* ---------- 비교 표 ---------- */
+
+/* 과정별로 대상·기간·비용이 갈리는 프로그램을 나란히 놓을 때 씁니다. */
+.tbl-wrap { overflow-x: auto; }
+.tbl { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15px; }
+.tbl th, .tbl td { border: 1px solid var(--line); padding: 14px 16px; text-align: center; }
+.tbl th { background: var(--ink); color: #fff; font-weight: 700; font-size: 14px; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; }
+.tbl tbody tr:nth-child(even) { background: var(--bg-soft); }
+.tbl .name { font-weight: 800; }
+.tbl .price { font-weight: 800; color: var(--blue); }
+
 /* ---------- 일정 달력 표 ---------- */
 
 .cal-wrap { overflow-x: auto; }
