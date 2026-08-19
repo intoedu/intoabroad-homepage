@@ -298,6 +298,32 @@ a { color: inherit; text-decoration: none; }
 .notes ul { margin: 0; padding-left: 18px; }
 .notes li { font-size: 13px; color: var(--gray); line-height: 1.9; }
 
+/* ---------- 긴 페이지용 앵커 이동줄 ---------- */
+
+/* 스크롤이 긴 페이지에서 원하는 대목으로 바로 뛰게 해줍니다.
+   헤더(64px) 바로 아래에 붙여 두 줄이 겹치지 않게 합니다. */
+.anchors { position: sticky; top: 64px; z-index: 40; background: #fff; border-bottom: 1px solid var(--line); }
+.anchors .wrap { display: flex; gap: 4px; overflow-x: auto; max-width: 1200px; }
+.anchors a {
+  flex: none;
+  padding: 16px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.anchors a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* 앵커로 이동했을 때 제목이 고정 줄 아래로 숨지 않도록 */
+[id] { scroll-margin-top: 120px; }
+
+/* ---------- 큰 숫자 강조 ---------- */
+
+.stat-big { font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -2px; color: var(--blue); }
+.sec--dark .stat-big { color: #6ea8ff; }
+.stat-cap { font-size: 20px; font-weight: 800; margin-top: 12px; }
+
 /* ---------- 프로그램 카드 ---------- */
 
 .prog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -579,6 +605,10 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
   .t-h6    { font-size: 14px; }
   .t-con   { font-size: 13px; }
 
+  .anchors { top: 64px; }
+  .anchors a { padding: 13px 14px; font-size: 14px; }
+  .stat-big { font-size: 52px; letter-spacing: -1.5px; }
+  .stat-cap { font-size: 17px; }
   .hero { padding: 72px 0 60px; }
   .hero-facts { gap: 26px; }
   .hero-facts dd { font-size: 17px; }
