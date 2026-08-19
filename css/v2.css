@@ -32,7 +32,6 @@ body {
   font-weight: 400;
   letter-spacing: -.15px;
   -webkit-font-smoothing: antialiased;
-  padding-bottom: 84px;   /* 하단 고정 CTA 바에 콘텐츠가 가리지 않도록 */
 }
 
 img { max-width: 100%; display: block; }
@@ -120,6 +119,13 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(180deg, rgba(14, 14, 40, .45) 0%, rgba(14, 14, 40, .92) 100%);
 }
 .hero .wrap { position: relative; z-index: 1; }
+
+/* 홈 히어로는 첫인상을 잡는 자리라 더 크게 씁니다. */
+.hero--home { padding: 160px 0 140px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+.hero-actions .btn { min-width: 200px; }
+.btn-ghost-light { background: rgba(255, 255, 255, .12); color: #fff; border: 1px solid rgba(255, 255, 255, .28); }
+.btn-ghost-light:hover { background: rgba(255, 255, 255, .2); }
 
 .badge {
   display: inline-block;
@@ -292,7 +298,90 @@ a { color: inherit; text-decoration: none; }
 .notes ul { margin: 0; padding-left: 18px; }
 .notes li { font-size: 13px; color: var(--gray); line-height: 1.9; }
 
+/* ---------- 프로그램 카드 ---------- */
+
+.prog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.prog-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 26px;
+}
+.prog-eyebrow { font-size: 13px; font-weight: 800; color: var(--blue); margin: 0 0 10px; }
+.prog-card h3 { font-size: 22px; font-weight: 800; line-height: 1.4; margin: 0 0 14px; }
+.prog-price { font-size: 22px; font-weight: 800; letter-spacing: -.5px; margin: 0; }
+.prog-price span { display: block; font-size: 13px; font-weight: 400; color: var(--gray); margin-top: 6px; line-height: 1.6; }
+.prog-summary { font-size: 14px; color: var(--gray-2); line-height: 1.75; margin: 16px 0 0; }
+.prog-date { font-size: 14px; color: var(--gray-2); margin: 16px 0 0; }
+
+.prog-facts { margin: 18px 0 0; border-top: 1px solid var(--line); }
+.prog-facts > div { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+.prog-facts dt { font-size: 13px; color: var(--gray); }
+.prog-facts dd { margin: 0; font-size: 14px; line-height: 1.6; }
+
+.prog-actions { margin-top: auto; padding-top: 22px; display: flex; gap: 10px; }
+.prog-actions .btn { min-width: 0; flex: 1; height: 48px; line-height: 48px; font-size: 15px; padding: 0 12px; }
+
+/* 마감 태그 — js/site.js 가 날짜를 보고 붙입니다. 클래스명은 바꾸지 마세요. */
+.prog-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 7px 14px;
+  border-bottom-left-radius: 12px;
+  background: var(--red);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 800;
+  pointer-events: none;
+}
+.prog-ribbon--soon { background: #e08b2e; }
+.prog-card.has-ribbon .prog-eyebrow { padding-right: 92px; }
+
+.btn-closed { background: var(--red); color: #fff; pointer-events: none; }
+
+/* 마감된 카드는 안쪽을 눌러 태그와 '신청 마감' 버튼이 먼저 보이게 합니다.
+   부모에 opacity 를 걸면 자식이 다시 밝아질 수 없으므로 흐리게 할 것만 골라 지정합니다. */
+.prog-card:has(.prog-ribbon--closed) { background: var(--bg-soft); }
+.prog-card:has(.prog-ribbon--closed)
+  :is(.prog-eyebrow, h3, .prog-price, .prog-summary, .prog-facts, .prog-date, .btn-primary) {
+  opacity: .42;
+}
+
+/* ---------- 나라 카드 ---------- */
+
+.region-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.region-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: .2s ease-in-out;
+}
+.region-card:hover { border-color: var(--gray); transform: translateY(-2px); }
+.region-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.region-card .body { padding: 26px 24px 28px; }
+.region-card .flag { font-size: 12px; font-weight: 800; color: var(--blue); letter-spacing: .06em; margin: 0 0 10px; }
+.region-card h3 { font-size: 20px; font-weight: 800; line-height: 1.45; margin: 0 0 10px; }
+.region-card .body > p { font-size: 14px; color: var(--gray); line-height: 1.75; margin: 0; }
+.region-card .more { margin-top: 16px; font-weight: 800; color: var(--ink); font-size: 14px; }
+
+/* ---------- 가운데 정렬 CTA 섹션 ---------- */
+
+.cta-sec { text-align: center; }
+.cta-sec .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+.cta-sec .btn { min-width: 220px; }
+
 /* ---------- 하단 고정 CTA ---------- */
+
+/* 고정 바가 있는 페이지에서만 아래 여백을 둡니다 — 홈·나라 페이지에는 바가 없습니다. */
+body:has(.cta-bar) { padding-bottom: 84px; }
 
 .cta-bar {
   position: fixed;
@@ -321,16 +410,143 @@ a { color: inherit; text-decoration: none; }
 .ft-links .btn { min-width: 0; height: 44px; line-height: 44px; font-size: 14px; padding: 0 20px; }
 .ft-meta { font-size: 13px; color: var(--gray); line-height: 1.9; }
 
+/* ==========================================================================
+   기존 마크업 호환 레이어
+
+   style.css 시절 클래스를 그대로 둔 채 밝은 톤으로 받아줍니다. 페이지마다
+   본문을 다시 쓰지 않고도 사이트 전체 인상을 한 번에 옮기기 위한 것입니다.
+   구조까지 롱폼으로 다시 짠 페이지(us-schooling)는 위쪽 v2 클래스를 쓰므로
+   이 블록의 영향을 받지 않습니다.
+   ========================================================================== */
+
+/* 헤더 */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; gap: 20px; height: 64px; max-width: 1200px; }
+.site-header .logo img { height: 30px; }
+.site-header .nav { margin-left: auto; display: flex; align-items: center; gap: 26px; }
+.site-header .nav a { font-size: 15px; font-weight: 700; color: var(--gray-2); }
+.site-header .nav a:hover, .site-header .nav a[aria-current] { color: var(--ink); }
+.site-header .nav-toggle { display: none; }
+.btn-sm {
+  background: var(--blue); color: #fff; border-radius: 100px;
+  padding: 10px 18px; font-size: 14px; font-weight: 700;
+}
+
+/* 페이지 헤드 = 히어로 */
+.page-head { position: relative; overflow: hidden; background: var(--dark); color: #fff; padding: 96px 0 84px; }
+.page-head .wrap { position: relative; z-index: 1; }
+.page-head h1 { font-size: 56px; font-weight: 800; letter-spacing: -.8px; line-height: 1.2; margin: 0 0 20px; }
+.page-head > .wrap > p { color: rgba(255, 255, 255, .72); font-size: 18px; line-height: 1.7; max-width: 640px; margin: 0; }
+.page-head .section-label { color: #fff; opacity: .75; }
+
+/* 섹션 */
+.section { padding: 92px 0; }
+.section--alt { background: var(--bg-soft); }
+.section-label { font-size: 14px; font-weight: 800; color: var(--blue); letter-spacing: .06em; margin: 0 0 12px; }
+.section h2 { font-size: 40px; font-weight: 800; line-height: 1.3; letter-spacing: -.4px; margin: 0 0 16px; }
+.section h3 { font-size: 22px; font-weight: 800; margin: 0 0 10px; }
+.section .desc { color: var(--gray); font-size: 17px; line-height: 1.75; margin: 0 0 44px; max-width: 760px; }
+
+/* 카드 그리드 */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  display: block; background: #fff; border: 1px solid var(--line);
+  border-radius: 4px; padding: 30px 26px; color: inherit;
+  transition: .2s ease-in-out;
+}
+a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
+.card .icon { font-size: 32px; margin-bottom: 16px; }
+.card h3 { font-size: 20px; font-weight: 800; margin: 0 0 10px; }
+.card p { font-size: 14px; color: var(--gray); line-height: 1.75; margin: 0; }
+.card .flag { font-size: 12px; font-weight: 800; color: var(--blue); letter-spacing: .06em; margin: 0 0 10px; }
+.card .more { margin-top: 16px; font-weight: 800; color: var(--ink); }
+
+/* 사진이 있는 나라 카드는 안쪽 여백을 이미지가 먹지 않도록 되돌립니다 */
+.card.region-card { padding: 0; overflow: hidden; }
+.card.region-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.card.region-card .body { padding: 26px 24px 28px; }
+
+/* 본문 글 */
+.prose { max-width: 760px; }
+.prose h2 { font-size: 30px; margin: 56px 0 16px; }
+.prose p, .prose li { color: var(--gray-2); font-size: 16px; line-height: 1.85; }
+.prose ul { padding-left: 20px; }
+.prose li { margin-bottom: 8px; }
+
+/* 상세 페이지 블록 */
+.detail-body { max-width: 820px; margin: 0 auto; }
+.dintro { border-left: 3px solid var(--blue); padding: 4px 0 4px 22px; margin-bottom: 44px; }
+.dintro h2 { font-size: 30px; font-weight: 800; margin: 0 0 14px; }
+.dintro p { color: var(--gray-2); font-size: 16px; line-height: 1.85; margin: 0; }
+.dsec { margin-bottom: 48px; }
+.dsec h3 { font-size: 26px; font-weight: 800; margin: 0 0 18px; }
+.dsec p { color: var(--gray-2); line-height: 1.85; }
+
+.dcards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 44px; }
+.dcard { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 26px 24px; }
+.dci { font-size: 30px; margin-bottom: 14px; }
+.dct { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+.dcd { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+.dlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.dlist li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; line-height: 1.75; color: var(--gray-2); }
+.ddot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); margin-top: 11px; }
+.dtitle { display: block; font-size: 17px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+.dsub { display: block; color: var(--gray); font-size: 15px; }
+
+.dinfo { border-top: 2px solid var(--ink); }
+.dii { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 18px 4px; border-bottom: 1px solid var(--line); }
+.dil { font-size: 15px; font-weight: 700; color: var(--gray-2); }
+.dii .div { font-size: 15px; line-height: 1.7; }
+
+.highlight-box { background: var(--bg-soft); border-radius: 4px; padding: 22px 24px; }
+.highlight-box p { margin: 0; font-size: 15px; color: var(--gray-2); line-height: 1.8; }
+.price-box { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 4px; padding: 30px 28px; }
+
+.detail-phone-cta { background: var(--dark); color: #fff; border-radius: 4px; padding: 48px 32px; text-align: center; margin-top: 56px; }
+.detail-phone-cta h3 { font-size: 26px; font-weight: 800; margin: 0 0 10px; }
+.detail-phone-cta p { color: rgba(255, 255, 255, .6); margin: 0 0 22px; }
+.dphone-num a { font-size: 38px; font-weight: 800; letter-spacing: -.5px; color: #fff; }
+.dphone-h { font-size: 14px; color: rgba(255, 255, 255, .55); margin-top: 10px; }
+.detail-back { margin-top: 44px; }
+
+/* 옛 버튼 */
+.btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--gray); }
+.page-head .btn-ghost, .sec--dark .btn-ghost, .detail-phone-cta .btn-ghost {
+  background: rgba(255, 255, 255, .12); color: #fff; border-color: rgba(255, 255, 255, .28);
+}
+
+/* 옛 푸터 */
+.site-footer { background: var(--bg-soft); border-top: 1px solid var(--line); padding: 56px 0 64px; }
+.footer-top { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-bottom: 34px; }
+.footer-contact .tel { font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
+.footer-contact .hours { font-size: 14px; color: var(--gray); margin: 6px 0 0; }
+.footer-links { margin-left: auto; display: flex; gap: 10px; }
+.footer-links .btn { min-width: 0; height: 44px; line-height: 44px; font-size: 14px; padding: 0 20px; }
+.footer-meta { font-size: 13px; color: var(--gray); line-height: 1.9; }
+
 /* ---------- 반응형 ---------- */
 
+@media (max-width: 1000px) {
+  .prog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
-  .tiers, .feat { grid-template-columns: 1fr; }
-  .chap-item, .rows .row { grid-template-columns: 1fr; gap: 10px; }
+  .tiers, .feat, .prog-grid, .region-grid, .grid, .dcards { grid-template-columns: 1fr; }
+  .chap-item, .rows .row, .dii { grid-template-columns: 1fr; gap: 10px; }
 }
 
 @media (max-width: 767px) {
-  body { padding-bottom: 76px; }
+  body:has(.cta-bar) { padding-bottom: 76px; }
   .sec { padding: 64px 0; }
+  .hero--home { padding: 96px 0 84px; }
+  .cta-sec .btn { min-width: 0; }
   .sec-head { margin-bottom: 36px; }
 
   /* 패스트캠퍼스는 모바일에서 55px 를 쓰지만 한글은 단어가 길어 넘칩니다.
@@ -353,7 +569,32 @@ a { color: inherit; text-decoration: none; }
   .count-box { min-width: 0; flex: 1; }
   .count-n { font-size: 26px; }
 
-  .hd nav { display: none; }
+  .section { padding: 60px 0; }
+  .section h2 { font-size: 28px; }
+  .section .desc { font-size: 15px; margin-bottom: 30px; }
+  .page-head { padding: 60px 0 52px; }
+  .page-head h1 { font-size: 36px; letter-spacing: -1px; }
+  .page-head > .wrap > p { font-size: 15px; }
+  .dintro h2, .dsec h3 { font-size: 22px; }
+  .dphone-num a { font-size: 30px; }
+
+  .hd nav, .site-header .nav { display: none; }
+  .site-header .nav.open {
+    display: flex;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 20px 18px;
+  }
+  .site-header .nav.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .site-header .nav-toggle {
+    display: block; margin-left: auto;
+    background: none; border: none;
+    font-size: 22px; cursor: pointer; color: var(--ink);
+  }
+
   .hd nav.open {
     display: flex;
     position: absolute;

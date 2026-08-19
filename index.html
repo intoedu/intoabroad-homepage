@@ -18,12 +18,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/favicon.png">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/v2.css">
 
 <!-- 검색 결과에 회사 정보를 정확히 노출하기 위한 구조화 데이터 -->
 <script type="application/ld+json">
@@ -40,9 +39,9 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="hd">
   <div class="wrap">
-    <a class="logo" href="./"><img src="img/logo-header.png" alt="인투유학"></a>
+    <a class="logo" href="./"><img src="img/logo-header-dark.png" alt="인투유학"></a>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
     <nav class="nav">
       <a href="./" aria-current="page">홈</a>
@@ -50,28 +49,32 @@
       <a href="philippines">필리핀</a>
       <a href="malaysia">말레이시아·영국·호주</a>
       <a href="notice">소식</a>
-      <a class="btn-sm" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">상담 신청</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-  <section class="hero hero--photo" style="--photo:url('../img/home.jpg')">
+  <section class="hero hero--home" style="--photo:url('../img/home.jpg')">
     <div class="wrap">
-      <h1>세계의 장벽을 낮추다<br>인투유학</h1>
+      <span class="badge">미국 · 필리핀 · 말레이시아 · 영국 · 호주</span>
+      <h1 class="t-title">세계의 장벽을<br>낮추다</h1>
+      <p class="lead t-h5">현지 교육 기관과 직접 협력합니다. 중간 단계를 거치지 않기에<br>정보는 정확하고 비용은 합리적입니다.</p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">무료 상담 신청</a>
-        <a class="btn btn-ghost" href="#programs">인기 프로그램 보기</a>
+        <a class="btn btn-ghost-light" href="#programs">인기 프로그램 보기</a>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" id="programs">
+  <section class="sec sec--soft" id="programs">
     <div class="wrap">
-      <p class="section-label">POPULAR PROGRAMS</p>
-      <h2>인기 프로그램</h2>
-      <p class="desc">프로그램을 눌러 소개 페이지로 바로 이동합니다.</p>
+      <div class="sec-head">
+        <span class="eyebrow">POPULAR PROGRAMS</span>
+        <h2 class="t-h1">인기 프로그램</h2>
+        <p class="t-h6">프로그램을 눌러 소개 페이지로 바로 이동합니다.</p>
+      </div>
 
       <div class="prog-grid">
 
@@ -150,57 +153,59 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="sec">
     <div class="wrap">
-      <p class="section-label">WHY INTO GLOBAL EDUCATION?</p>
-      <h2>왜 인투유학인가?</h2>
-      <p class="desc">
-        인투유학원은 단순한 유학 연결을 넘어, 학생의 언어 능력·글로벌 감각·인성을 함께 키우는 교육 파트너 입니다.
-      </p>
+      <div class="sec-head">
+        <span class="eyebrow">WHY INTO ABROAD</span>
+        <h2 class="t-h1">왜 인투유학인가</h2>
+        <p class="t-h6">단순한 유학 연결을 넘어, 학생의 언어 능력·글로벌 감각·인성을 함께 키우는 교육 파트너입니다.</p>
+      </div>
 
-      <p class="section-label" style="margin-top:64px">WHAT MAKES INTO EDUCATION DIFFERENT</p>
-      <h2>인투유학의 장점</h2>
-
-      <div class="grid">
-        <article class="card">
-          <div class="icon">🌏</div>
-          <h3>글로벌 직접 네트워크</h3>
-          <p>필리핀·말레이시아·미국 교육 기관과의 직접 협력으로, 신뢰할 수 있는 프로그램과 정확한 정보를 제공합니다.</p>
-        </article>
-        <article class="card">
-          <div class="icon">🛡️</div>
-          <h3>안전한 학생 케어 시스템</h3>
-          <p>체계적인 생활·학습 관리 시스템으로, 낯선 환경에서도 학생이 안전하고 안정적으로 생활할 수 있도록 지원합니다.</p>
-        </article>
-        <article class="card">
-          <div class="icon">📘</div>
-          <h3>검증된 교육 프로그램</h3>
-          <p>현장에서 검증된 영어 교육·문화 체험·수업 참여 프로그램으로, 단순 여행이 아닌 진짜 학습 경험을 제공합니다.</p>
-        </article>
-        <article class="card">
-          <div class="icon">🌱</div>
-          <h3>인성 및 리더십 개발</h3>
-          <p>언어를 넘어 인성과 리더십까지, 다양한 문화 속 경험을 통해 책임감과 도전 정신을 갖춘 글로벌 인재로 성장시킵니다.</p>
-        </article>
-        <article class="card">
-          <div class="icon">💳</div>
-          <h3>합리적인 비용</h3>
+      <div class="feat">
+        <div class="feat-card">
+          <div class="feat-ico">🌏</div>
+          <h4>글로벌 직접 네트워크</h4>
+          <p>필리핀·말레이시아·미국 교육 기관과 직접 협력해, 신뢰할 수 있는 프로그램과 정확한 정보를 제공합니다.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">🛡️</div>
+          <h4>안전한 학생 케어 시스템</h4>
+          <p>체계적인 생활·학습 관리로, 낯선 환경에서도 학생이 안전하고 안정적으로 지낼 수 있도록 돕습니다.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">📘</div>
+          <h4>검증된 교육 프로그램</h4>
+          <p>현장에서 검증된 영어 교육·문화 체험·수업 참여로, 단순 여행이 아닌 진짜 학습 경험을 만듭니다.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">🌱</div>
+          <h4>인성 및 리더십 개발</h4>
+          <p>언어를 넘어 인성과 리더십까지. 다양한 문화 속 경험으로 책임감과 도전 정신을 갖춘 인재로 성장시킵니다.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">💳</div>
+          <h4>합리적인 비용</h4>
           <p>직접 협력 네트워크로 중간 비용을 줄여, 합리적인 가격에 높은 교육 가치를 제공합니다.</p>
-        </article>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">📞</div>
+          <h4>부담 없는 상담</h4>
+          <p>어느 나라가 맞을지, 비용은 얼마나 드는지 먼저 물어보세요. 상담은 무료이고 계약으로 이어지지 않습니다.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" id="regions">
+  <section class="sec sec--soft" id="regions">
     <div class="wrap">
-      <p class="section-label">GLOBAL NETWORK</p>
-      <h2>인투유학 글로벌 네트워크</h2>
-      <p class="desc">
-        미국, 필리핀, 말레이시아 등 해외 교육 기관들과 직접 네트워크를 구축해 안전하고 신뢰할 수 있는 교육 프로그램을 제공합니다.
-      </p>
+      <div class="sec-head">
+        <span class="eyebrow">GLOBAL NETWORK</span>
+        <h2 class="t-h1">인투유학 글로벌 네트워크</h2>
+        <p class="t-h6">해외 교육 기관들과 직접 네트워크를 구축해 안전하고 신뢰할 수 있는 교육 프로그램을 제공합니다.</p>
+      </div>
 
-      <div class="grid">
-        <a class="card region-card" href="usa">
+      <div class="region-grid">
+        <a class="region-card" href="usa">
           <img src="img/usa.jpg" alt="미국 텍사스 캠퍼스와 도심 전경" loading="lazy">
           <div class="body">
             <p class="flag">USA · College Station, Texas</p>
@@ -210,7 +215,7 @@
           </div>
         </a>
 
-        <a class="card region-card" href="philippines">
+        <a class="region-card" href="philippines">
           <img src="img/philippines.jpg" alt="필리핀 연수 현장" loading="lazy">
           <div class="body">
             <p class="flag">PHILIPPINES · Dasmariñas</p>
@@ -220,7 +225,7 @@
           </div>
         </a>
 
-        <a class="card region-card" href="malaysia">
+        <a class="region-card" href="malaysia">
           <img src="img/malaysia.jpg" alt="말레이시아 쿠알라룸푸르 전경" loading="lazy">
           <div class="body">
             <p class="flag">MALAYSIA · Kuala Lumpur</p>
@@ -230,12 +235,12 @@
           </div>
         </a>
 
-        <a class="card region-card" href="malaysia#pathway">
+        <a class="region-card" href="malaysia#pathway">
           <img src="img/uk-au.jpg" alt="영국·호주 편입 과정" loading="lazy">
           <div class="body">
             <p class="flag">UK &amp; AUSTRALIA PATHWAY</p>
             <h3>말레이시아에서 영국·호주 대학으로 편입 가능</h3>
-            <p>말레이시아에서 학업을 시작해 영국·호주 대학 본과로 편입하는 경로를 안내합니다. 학교 선정부터 편입 준비까지 함께 준비합니다.</p>
+            <p>말레이시아에서 학업을 시작해 영국·호주 대학 본과로 편입하는 경로를 안내합니다. 학교 선정부터 편입 준비까지 함께합니다.</p>
             <p class="more">더 알아보기 →</p>
           </div>
         </a>
@@ -243,36 +248,33 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="sec sec--dark cta-sec">
     <div class="wrap">
-      <h2>먼저 편하게 물어보세요</h2>
-      <p class="desc">
-        어느 나라가 맞을지, 비용은 얼마나 드는지, 지금 준비해야 할 것은 무엇인지 —
-        상담은 무료이고, 신청하신다고 계약으로 이어지지 않습니다.
-      </p>
-      <div class="hero-actions">
+      <h2 class="t-typo">먼저 편하게<br>물어보세요</h2>
+      <p class="t-h5 muted" style="margin-top:20px">어느 나라가 맞을지, 비용은 얼마나 드는지, 지금 준비해야 할 것은 무엇인지.<br>상담은 무료이고, 신청하신다고 계약으로 이어지지 않습니다.</p>
+      <div class="btns">
         <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">상담 신청하기</a>
-        <a class="btn btn-ghost" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡으로 문의</a>
+        <a class="btn btn-ghost-light" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡으로 문의</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
+<footer class="ft">
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-contact">
-        <a class="tel" href="tel:031-334-2414">031-334-2414</a>
-        <p class="hours">고객문의 9:00~19:00 · 일요일 제외</p>
+    <div class="ft-top">
+      <div>
+        <a class="ft-tel" href="tel:031-334-2414">031-334-2414</a>
+        <p class="ft-hours">고객문의 9:00~19:00 · 일요일 제외</p>
       </div>
-      <div class="footer-links">
-        <a class="btn btn-ghost" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡 상담</a>
-        <a class="btn btn-ghost" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">공식 블로그</a>
+      <div class="ft-links">
+        <a class="btn btn-line" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡 상담</a>
+        <a class="btn btn-line" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">공식 블로그</a>
         <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">상담 신청</a>
       </div>
     </div>
-    <div class="footer-meta">
+    <div class="ft-meta">
       인투유학 (INTO ABROAD)<br>
       주소: 경기 용인시 처인구 명지로40번길 13 205호 · 사업자등록번호: 559-18-02242<br>
       © <span id="year">2026</span> INTO ABROAD. All rights reserved.
