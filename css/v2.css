@@ -247,6 +247,10 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 .chap-n { font-size: 14px; font-weight: 800; color: var(--blue); }
+
+/* 항목 전체가 링크인 경우 (소식 페이지의 블로그 카드 등) */
+a.chap-item { color: inherit; transition: opacity .18s ease-in-out; }
+a.chap-item:hover { opacity: .7; }
 .chap-item h4 { margin: 0 0 10px; font-size: 22px; font-weight: 800; }
 .chap-item p { margin: 0; color: var(--gray-2); line-height: 1.75; font-size: 15px; }
 

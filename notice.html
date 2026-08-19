@@ -26,7 +26,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="hd">
   <div class="wrap">
     <a class="logo" href="./"><img src="img/logo-header-dark.png" alt="인투유학"></a>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
@@ -43,69 +43,87 @@
 
 <main>
 
-  <section class="page-head page-head--photo" style="--photo:url('../img/notice.jpg')">
+  <!-- 1. 히어로 -->
+  <section class="hero" style="--photo:url('../img/notice.jpg')">
     <div class="wrap">
-      <p class="section-label">NEWS &amp; NOTICE</p>
-      <h1>소식 · 공지사항</h1>
-      <p>프로그램 안내와 설명회 일정은 이곳에, 유학 이야기와 현지 소식은 공식 블로그에 올립니다.</p>
+      <span class="badge">NEWS &amp; NOTICE</span>
+      <h1 class="t-title">소식 · 공지사항</h1>
+      <p class="lead t-h5">프로그램 안내와 설명회 일정은 이곳에,<br>유학 이야기와 현지 소식은 공식 블로그에 올립니다.</p>
     </div>
   </section>
 
-  <section class="section">
+  <!-- 2. 공지사항 -->
+  <section class="sec" id="notice">
     <div class="wrap">
-
-      <h2>공지사항</h2>
-      <p class="desc">홈페이지에서 직접 알려드리는 공지입니다.</p>
-
-      <!-- 새 공지는 이 아래 <article> 하나를 복사해서 맨 위에 붙여 넣으세요 -->
-      <div class="grid">
-        <article class="card">
-          <p class="flag" style="color:var(--blue-hi);font-size:13px;font-weight:700">2026-07-24</p>
-          <h3>홈페이지를 새로 열었습니다</h3>
-          <p>인투유학 홈페이지가 새 단장했습니다. 프로그램별 안내와 상담 신청을 더 편하게 이용하실 수 있습니다.</p>
-        </article>
+      <div class="sec-head">
+        <span class="eyebrow">NOTICE</span>
+        <h2 class="t-h1">공지사항</h2>
+        <p class="t-h6">홈페이지에서 직접 알려드리는 공지입니다.</p>
       </div>
 
+      <!-- 새 공지는 이 아래 <div class="chap-item"> 하나를 복사해서 맨 위에 붙여 넣으세요 -->
+      <div class="chap">
+        <div class="chap-item">
+          <div class="chap-n">2026-07-24</div>
+          <div>
+            <h4>홈페이지를 새로 열었습니다</h4>
+            <p>인투유학 홈페이지가 새 단장했습니다. 프로그램별 안내와 상담 신청을 더 편하게 이용하실 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <!-- 3. 공식 블로그 -->
+  <section class="sec sec--dark" id="blog">
     <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" style="color:#fff">OFFICIAL BLOG</span>
+        <h2 class="t-h1">공식 블로그</h2>
+        <p class="t-h6 muted">현지 소식, 학생 이야기, 출국 준비 정보는 네이버 공식 블로그에서 자세히 다룹니다.<br>새 글은 블로그에 올리고, 이곳에서는 링크로 안내합니다.</p>
+      </div>
 
-      <h2>공식 블로그</h2>
-      <p class="desc">
-        현지 소식, 학생 이야기, 출국 준비 정보는 네이버 공식 블로그에서 자세히 다룹니다.
-        새 글은 블로그에 올리고, 이곳에서는 링크로 안내합니다.
-      </p>
-
-      <!-- 소개하고 싶은 글이 생기면 아래 목록에 링크를 추가하세요 -->
-      <div class="grid">
-        <a class="card" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">
-          <div class="icon">📝</div>
-          <h3>인투유학 공식 블로그</h3>
-          <p>최신 글 전체 보기 →</p>
+      <!-- 소개하고 싶은 글이 생기면 아래 <a class="chap-item"> 를 복사해 링크를 추가하세요 -->
+      <div class="chap" style="border-color:rgba(255,255,255,.16)">
+        <a class="chap-item" style="border-color:rgba(255,255,255,.16)" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">
+          <div class="chap-n" style="color:#fff">📝</div>
+          <div>
+            <h4>인투유학 공식 블로그</h4>
+            <p class="muted">최신 글 전체 보기 →</p>
+          </div>
         </a>
       </div>
+    </div>
+  </section>
 
+  <!-- 4. 상담 CTA -->
+  <section class="sec sec--soft cta-sec">
+    <div class="wrap">
+      <h2 class="t-typo">궁금한 점이<br>있으신가요</h2>
+      <p class="t-h5 muted" style="margin-top:20px">프로그램 안내부터 출국 준비까지 편하게 물어보세요.<br>상담은 무료이고, 신청하신다고 계약으로 이어지지 않습니다.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">상담 신청하기</a>
+        <a class="btn btn-line" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡으로 문의</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
+<footer class="ft">
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-contact">
-        <a class="tel" href="tel:031-334-2414">031-334-2414</a>
-        <p class="hours">고객문의 9:00~19:00 · 일요일 제외</p>
+    <div class="ft-top">
+      <div>
+        <a class="ft-tel" href="tel:031-334-2414">031-334-2414</a>
+        <p class="ft-hours">고객문의 9:00~19:00 · 일요일 제외</p>
       </div>
-      <div class="footer-links">
-        <a class="btn btn-ghost" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡 상담</a>
-        <a class="btn btn-ghost" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">공식 블로그</a>
+      <div class="ft-links">
+        <a class="btn btn-line" href="https://pf.kakao.com/_AkclX" target="_blank" rel="noopener">카톡 상담</a>
+        <a class="btn btn-line" href="https://blog.naver.com/intoedu0309" target="_blank" rel="noopener">공식 블로그</a>
         <a class="btn btn-primary" href="https://koreayjk.github.io/into/apply" target="_blank" rel="noopener">상담 신청</a>
       </div>
     </div>
-    <div class="footer-meta">
+    <div class="ft-meta">
       인투유학 (INTO ABROAD)<br>
       주소: 경기 용인시 처인구 명지로40번길 13 205호 · 사업자등록번호: 559-18-02242<br>
       © <span id="year">2026</span> INTO ABROAD. All rights reserved.
