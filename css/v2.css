@@ -1,0 +1,384 @@
+/* 인투유학 v2 — 밝은 톤 롱폼 상세페이지.
+   패스트캠퍼스 상세페이지에서 뽑아낸 값을 기준으로 삼았습니다.
+     타입 스케일 70/52/40/34/28/24/20/16/14/12 · 자간 -0.15px(큰 제목 -0.8px)
+     제목 800 / 본문 400 (중간 굵기를 거의 쓰지 않는 것이 이 톤의 핵심입니다)
+     포인트 #0A64FF · 긴급 #FF5548 · 카드 모서리 4px · 버튼 알약 100px · 콘텐츠 폭 980px
+   지금은 us-schooling.html 한 장만 이 파일을 씁니다. 나머지 12개는 style.css 그대로입니다. */
+
+:root {
+  --blue: #0a64ff;
+  --blue-dark: #0850cc;
+  --red: #ff5548;
+  --ink: #171b1f;
+  --gray: #919191;
+  --gray-2: #4b4d4f;
+  --line: #e7e7e8;
+  --bg: #fff;
+  --bg-soft: #f5f5f6;
+  --dark: #0e0e28;
+  --wrap: 980px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+               system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  letter-spacing: -.15px;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 84px;   /* 하단 고정 CTA 바에 콘텐츠가 가리지 않도록 */
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- 타입 스케일 ---------- */
+
+.t-title { font-size: 70px; font-weight: 800; line-height: 1.2; letter-spacing: -.8px; margin: 0; }
+.t-typo  { font-size: 52px; font-weight: 800; line-height: 1.25; letter-spacing: -.8px; margin: 0; }
+.t-h1    { font-size: 40px; font-weight: 800; line-height: 1.3; margin: 0; }
+.t-h2    { font-size: 34px; font-weight: 800; line-height: 1.35; margin: 0; }
+.t-h3    { font-size: 28px; font-weight: 800; line-height: 1.4; margin: 0; }
+.t-h4    { font-size: 24px; font-weight: 700; line-height: 1.45; margin: 0; }
+.t-h5    { font-size: 20px; font-weight: 700; line-height: 1.5; margin: 0; }
+.t-h6    { font-size: 16px; font-weight: 400; line-height: 1.6; margin: 0; }
+.t-con   { font-size: 14px; font-weight: 400; line-height: 1.65; margin: 0; }
+.t-cap   { font-size: 12px; font-weight: 400; line-height: 1.6; margin: 0; }
+
+.muted { color: var(--gray); }
+.bold  { font-weight: 800; }
+.blue  { color: var(--blue); }
+.red   { color: var(--red); }
+
+/* ---------- 섹션 ---------- */
+
+.sec { padding: 100px 0; }
+.sec--soft { background: var(--bg-soft); }
+.sec--dark { background: var(--dark); color: #fff; }
+.sec--dark .muted { color: rgba(255, 255, 255, .55); }
+
+.sec-head { text-align: center; margin-bottom: 56px; }
+.sec-head .eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: .04em;
+  margin-bottom: 14px;
+}
+.sec-head p { margin-top: 16px; color: var(--gray); }
+
+/* ---------- 헤더 ---------- */
+
+.hd {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.hd .wrap { display: flex; align-items: center; gap: 20px; height: 64px; max-width: 1200px; }
+.hd .logo img { height: 30px; }
+.hd nav { margin-left: auto; display: flex; align-items: center; gap: 26px; }
+.hd nav a { font-size: 15px; font-weight: 700; color: var(--gray-2); }
+.hd nav a:hover, .hd nav a[aria-current] { color: var(--ink); }
+.hd .nav-toggle { display: none; }
+
+/* ---------- 히어로 ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+  color: #fff;
+  padding: 110px 0 96px;
+}
+/* 사진은 style="--photo:url('../img/…')" 로 지정합니다.
+   경로 앞 ../ 는 필수입니다 — var() 안의 상대경로는 이 파일 위치(/css/)를 기준으로 풀립니다. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--photo);
+  background-size: cover;
+  background-position: center;
+  opacity: .38;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 14, 40, .45) 0%, rgba(14, 14, 40, .92) 100%);
+}
+.hero .wrap { position: relative; z-index: 1; }
+
+.badge {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 9px 18px;
+  margin-bottom: 24px;
+}
+.badge--red { background: var(--red); }
+
+.hero .t-title { margin-bottom: 22px; }
+.hero .lead { color: rgba(255, 255, 255, .72); max-width: 620px; }
+
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 44px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+.hero-facts dt { font-size: 13px; color: rgba(255, 255, 255, .5); margin-bottom: 7px; }
+.hero-facts dd { margin: 0; font-size: 19px; font-weight: 700; }
+
+/* ---------- 버튼 ---------- */
+
+.btn {
+  display: inline-block;
+  min-width: 300px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: .18s ease-in-out;
+  padding: 0 28px;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-dark { background: #3c3c3c; color: #fff; }
+.btn-dark:hover { background: #222; }
+.btn-line { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.btn-line:hover { border-color: var(--gray); }
+.btn-sm { min-width: 0; height: 40px; line-height: 40px; font-size: 14px; padding: 0 20px; }
+
+/* ---------- 가격 3단 ---------- */
+
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tier {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 30px 26px;
+}
+.tier--on { border: 2px solid var(--blue); box-shadow: 0 20px 30px rgba(10, 100, 255, .10); }
+.tier--off { background: var(--bg-soft); color: var(--gray); }
+
+.tier-name { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.tier--on .tier-name { color: var(--blue); }
+.tier-when { font-size: 13px; color: var(--gray); margin-bottom: 22px; }
+.tier-was { font-size: 14px; color: var(--gray); text-decoration: line-through; }
+.tier-now { font-size: 32px; font-weight: 800; letter-spacing: -.8px; margin: 4px 0 2px; }
+.tier-sub { font-size: 13px; color: var(--gray); }
+.tier-tag {
+  position: absolute;
+  top: -12px;
+  left: 26px;
+  background: var(--red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 5px 12px;
+}
+
+/* ---------- 카운트다운 ---------- */
+
+.count { text-align: center; }
+.count-label { font-size: 16px; font-weight: 700; margin-bottom: 18px; }
+.count-nums { display: flex; justify-content: center; gap: 10px; }
+.count-box {
+  min-width: 84px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 4px;
+  padding: 14px 8px;
+}
+.count-n { font-size: 34px; font-weight: 800; line-height: 1.1; letter-spacing: -.8px; }
+.count-u { font-size: 12px; color: rgba(255, 255, 255, .55); margin-top: 5px; }
+
+/* ---------- 특징 카드 ---------- */
+
+.feat { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+.feat-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 34px 28px;
+}
+.feat-ico { font-size: 34px; margin-bottom: 18px; }
+.feat-card h4 { margin: 0 0 10px; font-size: 20px; font-weight: 800; }
+.feat-card p { margin: 0; font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+/* ---------- 챕터 카드 (일정·도시·커리큘럼) ---------- */
+
+.chap { border-top: 1px solid var(--line); }
+.chap-item {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 28px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+.chap-n { font-size: 14px; font-weight: 800; color: var(--blue); }
+.chap-item h4 { margin: 0 0 10px; font-size: 22px; font-weight: 800; }
+.chap-item p { margin: 0; color: var(--gray-2); line-height: 1.75; font-size: 15px; }
+
+/* ---------- 정보 표 ---------- */
+
+.rows { border-top: 2px solid var(--ink); }
+.rows .row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.rows dt { font-size: 15px; font-weight: 700; color: var(--gray-2); }
+.rows dd { margin: 0; font-size: 15px; line-height: 1.7; }
+
+/* ---------- 체크 목록 ---------- */
+
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.checks li { display: flex; gap: 14px; align-items: flex-start; font-size: 17px; line-height: 1.6; }
+.checks li::before {
+  content: "✓";
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+.sec--dark .checks li::before { background: #fff; color: var(--dark); }
+
+/* ---------- Q&A ---------- */
+
+.qa { border-top: 2px solid var(--ink); }
+.qa-item { border-bottom: 1px solid var(--line); padding: 28px 4px; }
+.qa-q { display: flex; gap: 14px; font-size: 19px; font-weight: 800; margin-bottom: 14px; }
+.qa-q span { color: var(--blue); flex: none; }
+.qa-a { display: flex; gap: 14px; color: var(--gray-2); line-height: 1.8; font-size: 15px; }
+.qa-a span { color: var(--gray); flex: none; font-weight: 800; }
+
+/* ---------- 유의사항 ---------- */
+
+.notes { background: var(--bg-soft); border-radius: 4px; padding: 26px 28px; }
+.notes ul { margin: 0; padding-left: 18px; }
+.notes li { font-size: 13px; color: var(--gray); line-height: 1.9; }
+
+/* ---------- 하단 고정 CTA ---------- */
+
+.cta-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  background: rgba(23, 27, 31, .97);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 14px 0;
+}
+.cta-bar .wrap { display: flex; align-items: center; gap: 20px; max-width: 1200px; }
+.cta-price { font-size: 20px; font-weight: 800; letter-spacing: -.5px; }
+.cta-note { font-size: 13px; color: rgba(255, 255, 255, .6); }
+.cta-bar .btns { margin-left: auto; display: flex; gap: 10px; }
+.cta-bar .btn { min-width: 150px; height: 48px; line-height: 48px; font-size: 15px; }
+
+/* ---------- 푸터 ---------- */
+
+.ft { background: var(--bg-soft); border-top: 1px solid var(--line); padding: 56px 0 64px; }
+.ft-top { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-bottom: 34px; }
+.ft-tel { font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
+.ft-hours { font-size: 14px; color: var(--gray); margin: 6px 0 0; }
+.ft-links { margin-left: auto; display: flex; gap: 10px; }
+.ft-links .btn { min-width: 0; height: 44px; line-height: 44px; font-size: 14px; padding: 0 20px; }
+.ft-meta { font-size: 13px; color: var(--gray); line-height: 1.9; }
+
+/* ---------- 반응형 ---------- */
+
+@media (max-width: 900px) {
+  .tiers, .feat { grid-template-columns: 1fr; }
+  .chap-item, .rows .row { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 767px) {
+  body { padding-bottom: 76px; }
+  .sec { padding: 64px 0; }
+  .sec-head { margin-bottom: 36px; }
+
+  /* 패스트캠퍼스는 모바일에서 55px 를 쓰지만 한글은 단어가 길어 넘칩니다.
+     40px 로 낮추고 자간을 더 조여 같은 인상을 유지합니다. */
+  .t-title { font-size: 40px; letter-spacing: -1px; }
+  .t-typo  { font-size: 34px; letter-spacing: -1px; }
+  .t-h1    { font-size: 30px; }
+  .t-h2    { font-size: 26px; }
+  .t-h3    { font-size: 22px; }
+  .t-h4    { font-size: 20px; }
+  .t-h5    { font-size: 18px; }
+  .t-h6    { font-size: 14px; }
+  .t-con   { font-size: 13px; }
+
+  .hero { padding: 72px 0 60px; }
+  .hero-facts { gap: 26px; }
+  .hero-facts dd { font-size: 17px; }
+
+  .btn { min-width: 0; width: 100%; }
+  .count-box { min-width: 0; flex: 1; }
+  .count-n { font-size: 26px; }
+
+  .hd nav { display: none; }
+  .hd nav.open {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 20px 18px;
+  }
+  .hd nav.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .hd .nav-toggle {
+    display: block;
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  .cta-bar .cta-note, .cta-bar .btn-line { display: none; }
+  .cta-bar .btns { flex: 1; }
+  .cta-bar .btn { min-width: 0; }
+}
