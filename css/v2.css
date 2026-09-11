@@ -427,6 +427,8 @@ body:has(.cta-bar) { padding-bottom: 84px; }
 .cta-bar .wrap { display: flex; align-items: center; gap: 20px; max-width: 1200px; }
 .cta-price { font-size: 20px; font-weight: 800; letter-spacing: -.5px; }
 .cta-note { font-size: 13px; color: rgba(255, 255, 255, .6); }
+/* 좁은 화면에서 cta-note 가 숨겨질 때 "항공료 별도" 만 대신 남깁니다. */
+.cta-ex { display: none; margin-top: 2px; font-size: 12px; font-weight: 700; color: rgba(255, 255, 255, .72); }
 .cta-bar .btns { margin-left: auto; display: flex; gap: 10px; }
 .cta-bar .btn { min-width: 150px; height: 48px; line-height: 48px; font-size: 15px; }
 
@@ -714,6 +716,7 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
   }
 
   .cta-bar .cta-note, .cta-bar .btn-line { display: none; }
+  .cta-bar .cta-ex { display: block; }
   .cta-bar .btns { flex: 1; }
   .cta-bar .btn { min-width: 0; }
 }
