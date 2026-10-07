@@ -720,3 +720,17 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
   .cta-bar .btns { flex: 1; }
   .cta-bar .btn { min-width: 0; }
 }
+
+/* ---------- 칸 수를 바꾼 그리드 (긴 안내 페이지용) ---------- */
+
+.grid--2 { grid-template-columns: 1fr 1fr; }
+.grid--21 { grid-template-columns: 2fr 1fr; }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 900px) {
+  .grid--2, .grid--21 { grid-template-columns: 1fr; }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid--4 { grid-template-columns: 1fr; }
+}
