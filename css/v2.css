@@ -139,7 +139,7 @@ a { color: inherit; text-decoration: none; }
 }
 .badge--red { background: var(--red); }
 
-.hero .t-title { margin-bottom: 22px; }
+.hero .t-title { margin-bottom: 22px; word-break: keep-all; }
 .hero .lead { color: rgba(255, 255, 255, .72); max-width: 620px; }
 
 .hero-facts {
@@ -232,7 +232,19 @@ a { color: inherit; text-decoration: none; }
   border-radius: 4px;
   padding: 34px 28px;
 }
-.feat-ico { font-size: 34px; margin-bottom: 18px; }
+.feat-ico {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(10, 100, 255, .08);
+  color: var(--blue);
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.feat-ico .ico { stroke-width: 1.75; }
+.sec--dark .feat-ico { background: rgba(255, 255, 255, .1); color: #6ea8ff; }
 .feat-card h4 { margin: 0 0 10px; font-size: 20px; font-weight: 800; }
 .feat-card p { margin: 0; font-size: 14px; color: var(--gray); line-height: 1.7; }
 
@@ -539,7 +551,18 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
 
 .dcards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 44px; }
 .dcard { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 26px 24px; }
-.dci { font-size: 30px; margin-bottom: 14px; }
+.dci {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(10, 100, 255, .08);
+  color: var(--blue);
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.dci .ico { stroke-width: 1.75; }
 .dct { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
 .dcd { font-size: 14px; color: var(--gray); line-height: 1.7; }
 
@@ -710,7 +733,9 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
     margin-left: auto;
     background: none;
     border: none;
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 0;
+    padding: 6px;
     cursor: pointer;
     color: var(--ink);
   }
@@ -720,6 +745,26 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
   .cta-bar .btns { flex: 1; }
   .cta-bar .btn { min-width: 0; }
 }
+
+/* ---------- 아이콘 ----------
+   Lucide 아이콘(ISC License · https://lucide.dev)을 SVG로 바로 넣어 씁니다.
+   글자 크기(1em)와 글자 색을 그대로 따라가므로, 크기·색은 감싼 요소에서 정합니다.
+   새 아이콘이 필요하면 lucide.dev 에서 같은 이름의 SVG를 찾아 안쪽 <path> 만 옮겨 오세요. */
+
+.ico {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -.14em;
+}
+.prog-date .ico { color: var(--blue); margin-right: 2px; }
+.chap-n > .ico:only-child { font-size: 30px; }
 
 /* ---------- 칸 수를 바꾼 그리드 (긴 안내 페이지용) ---------- */
 
