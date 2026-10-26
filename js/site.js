@@ -1,5 +1,27 @@
 /* 인투유학 공용 스크립트 — 모바일 메뉴 + 상담 신청 폼 전송 */
 
+// 화면에 띄우는 문구. 영어(/en/)·중국어(/zh/) 페이지는 <html lang> 을 보고 해당 언어 문구를 씁니다.
+const LANG = document.documentElement.lang.slice(0, 2);
+const T = LANG === 'en' ? {
+  soon: 'Closing soon',
+  closed: 'Applications closed',
+  noEndpoint: 'Online applications are not available yet. Please call +82-31-334-2414 or contact us on KakaoTalk.',
+  sent: 'Your inquiry has been received. We will contact you within 1 business day.',
+  failed: 'Sending failed. Please call +82-31-334-2414 or contact us on KakaoTalk.',
+} : LANG === 'zh' ? {
+  soon: '报名即将截止',
+  closed: '报名已截止',
+  noEndpoint: '在线报名暂未开通，请拨打 +82-31-334-2414 或通过 KakaoTalk 咨询。',
+  sent: '咨询申请已提交，我们将在 1 个工作日内与您联系。',
+  failed: '提交失败，请拨打 +82-31-334-2414 或通过 KakaoTalk 咨询。',
+} : {
+  soon: '신청 마감 임박',
+  closed: '신청 마감',
+  noEndpoint: '아직 온라인 접수가 연결되지 않았습니다. 031-334-2414 또는 카톡 상담으로 문의해 주세요.',
+  sent: '상담 신청이 접수되었습니다. 영업일 기준 1일 이내에 연락드리겠습니다.',
+  failed: '전송에 실패했습니다. 031-334-2414 또는 카톡 상담으로 문의해 주세요.',
+};
+
 // 모바일 햄버거 메뉴
 document.querySelector('.nav-toggle')?.addEventListener('click', (e) => {
   const nav = document.querySelector('.nav');
@@ -18,7 +40,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
    data-badge="정원 마감" — 날짜와 상관없이 직접 띄울 때. 선착순 마감 등 수동 처리용이며 날짜 계산보다 우선합니다.
      단 출발일이 지나면 숨김이 먼저입니다 — 이미 떠난 캠프를 광고하지 않기 위해서입니다.
    날짜가 확정되지 않은 프로그램(기수제 등)은 두 속성 다 넣지 않으면 아무것도 붙지 않습니다. */
-const RIBBON = { soon: '신청 마감 임박', closed: '신청 마감' };
+const RIBBON = { soon: T.soon, closed: T.closed };
 
 const cardState = (days) =>
   days < 0 ? 'past' : days > 20 ? 'open' : days > 10 ? 'soon' : 'closed';
@@ -46,7 +68,7 @@ document.querySelectorAll('.prog-card[data-deadline], .prog-card[data-badge]').f
   // 마감된 카드는 '전화 상담' 버튼을 눌리지 않는 '신청 마감' 버튼으로 교체합니다.
   if (badge || state === 'closed') {
     const tel = card.querySelector('.prog-actions a[href^="tel:"]');
-    if (tel) tel.outerHTML = '<span class="btn btn-closed">신청 마감</span>';
+    if (tel) tel.outerHTML = `<span class="btn btn-closed">${T.closed}</span>`;
   }
 });
 
@@ -87,7 +109,7 @@ if (form) {
     e.preventDefault();
 
     if (!FORM_ENDPOINT) {
-      show('아직 온라인 접수가 연결되지 않았습니다. 031-334-2414 또는 카톡 상담으로 문의해 주세요.', 'err');
+      show(T.noEndpoint, 'err');
       return;
     }
 
@@ -102,9 +124,9 @@ if (form) {
       });
       if (!res.ok) throw new Error(res.status);
       form.reset();
-      show('상담 신청이 접수되었습니다. 영업일 기준 1일 이내에 연락드리겠습니다.', 'ok');
+      show(T.sent, 'ok');
     } catch (err) {
-      show('전송에 실패했습니다. 031-334-2414 또는 카톡 상담으로 문의해 주세요.', 'err');
+      show(T.failed, 'err');
     } finally {
       btn.disabled = false;
     }
