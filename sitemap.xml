@@ -1,78 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://intoabroad.com/</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/"/>
   </url>
   <url>
     <loc>https://intoabroad.com/usa</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/usa"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/usa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/usa"/>
   </url>
   <url>
     <loc>https://intoabroad.com/philippines</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/philippines"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/philippines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/philippines"/>
   </url>
   <url>
     <loc>https://intoabroad.com/malaysia</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/malaysia"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/malaysia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/malaysia"/>
   </url>
   <url>
     <loc>https://intoabroad.com/us-guide</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-guide"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-guide"/>
   </url>
   <url>
     <loc>https://intoabroad.com/us-winter</loc>
     <lastmod>2026-10-16</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-winter"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-winter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-winter"/>
   </url>
   <url>
     <loc>https://intoabroad.com/us-art</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-art"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-art"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-art"/>
   </url>
   <url>
     <loc>https://intoabroad.com/us-schooling</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-schooling"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-schooling"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-schooling"/>
   </url>
   <url>
     <loc>https://intoabroad.com/us-visiontrip</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-visiontrip"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-visiontrip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-visiontrip"/>
   </url>
   <url>
     <loc>https://intoabroad.com/us-sports</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-sports"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-sports"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-sports"/>
   </url>
   <url>
     <loc>https://intoabroad.com/ph-language</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/ph-language"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/ph-language"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/ph-language"/>
   </url>
   <url>
     <loc>https://intoabroad.com/ph-prep</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/ph-prep"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/ph-prep"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/ph-prep"/>
   </url>
   <url>
     <loc>https://intoabroad.com/my-schooling</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/my-schooling"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/my-schooling"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/my-schooling"/>
   </url>
   <url>
     <loc>https://intoabroad.com/my-boarding</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/my-boarding"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/my-boarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/my-boarding"/>
   </url>
   <url>
     <loc>https://intoabroad.com/notice</loc>
     <lastmod>2026-07-24</lastmod>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/notice"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/notice"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/usa</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/usa"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/usa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/usa"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/philippines</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/philippines"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/philippines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/philippines"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/malaysia</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/malaysia"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/malaysia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/malaysia"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/us-guide</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-guide"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-guide"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/us-winter</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-winter"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-winter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-winter"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/us-art</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-art"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-art"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-art"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/us-schooling</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-schooling"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-schooling"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-schooling"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/us-visiontrip</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-visiontrip"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-visiontrip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-visiontrip"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/us-sports</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/us-sports"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/us-sports"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/us-sports"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/ph-language</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/ph-language"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/ph-language"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/ph-language"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/ph-prep</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/ph-prep"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/ph-prep"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/ph-prep"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/my-schooling</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/my-schooling"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/my-schooling"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/my-schooling"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/my-boarding</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/my-boarding"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/my-boarding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/my-boarding"/>
+  </url>
+  <url>
+    <loc>https://intoabroad.com/zh/notice</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://intoabroad.com/notice"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://intoabroad.com/zh/notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://intoabroad.com/notice"/>
   </url>
 </urlset>

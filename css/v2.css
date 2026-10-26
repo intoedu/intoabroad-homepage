@@ -779,3 +779,29 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
 @media (max-width: 560px) {
   .grid--4 { grid-template-columns: 1fr; }
 }
+
+/* ---------- 언어 전환 · 중국어 페이지 ----------
+   한국어 페이지는 /, 중국어(간체) 페이지는 /zh/ 아래 같은 파일 이름으로 둡니다.
+   헤더의 .lang-sw 가 지금 보고 있는 페이지의 다른 언어판으로 바로 넘겨 줍니다. */
+
+.hd nav a.lang-sw {
+  font-size: 13px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+}
+.hd nav a.lang-sw:hover { border-color: var(--gray); }
+
+/* Pretendard 에는 중국어 간체 글자가 없어, 한자가 한국식 글꼴로 섞여 보이지 않도록
+   중국어 페이지는 시스템의 간체 글꼴을 먼저 씁니다. 한글 자간 보정(-.15px)도 풉니다. */
+html:lang(zh) body {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC',
+               'Source Han Sans SC', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+/* keep-all 은 한국어 어절 단위 줄바꿈용입니다. 띄어쓰기가 없는 중국어에 쓰면 줄이 넘쳐 버립니다. */
+html:lang(zh) .hero .t-title { word-break: normal; }
+
+@media (max-width: 767px) {
+  .hd nav.open a.lang-sw { border: none; border-radius: 0; padding: 13px 0; border-bottom: 1px solid var(--line); }
+}
