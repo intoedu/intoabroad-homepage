@@ -1,8 +1,14 @@
 /* 인투유학 공용 스크립트 — 모바일 메뉴 + 상담 신청 폼 전송 */
 
-// 화면에 띄우는 문구. 중국어 페이지(/zh/, <html lang="zh-Hans">)는 zh 쪽을 씁니다.
-const ZH = document.documentElement.lang.startsWith('zh');
-const T = ZH ? {
+// 화면에 띄우는 문구. 영어(/en/)·중국어(/zh/) 페이지는 <html lang> 을 보고 해당 언어 문구를 씁니다.
+const LANG = document.documentElement.lang.slice(0, 2);
+const T = LANG === 'en' ? {
+  soon: 'Closing soon',
+  closed: 'Applications closed',
+  noEndpoint: 'Online applications are not available yet. Please call +82-31-334-2414 or contact us on KakaoTalk.',
+  sent: 'Your inquiry has been received. We will contact you within 1 business day.',
+  failed: 'Sending failed. Please call +82-31-334-2414 or contact us on KakaoTalk.',
+} : LANG === 'zh' ? {
   soon: '报名即将截止',
   closed: '报名已截止',
   noEndpoint: '在线报名暂未开通，请拨打 +82-31-334-2414 或通过 KakaoTalk 咨询。',

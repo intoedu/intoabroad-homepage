@@ -780,17 +780,33 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
   .grid--4 { grid-template-columns: 1fr; }
 }
 
-/* ---------- 언어 전환 · 중국어 페이지 ----------
-   한국어 페이지는 /, 중국어(간체) 페이지는 /zh/ 아래 같은 파일 이름으로 둡니다.
-   헤더의 .lang-sw 가 지금 보고 있는 페이지의 다른 언어판으로 바로 넘겨 줍니다. */
+/* ---------- 언어 전환 (한국어 · English · 中文) ----------
+   한국어는 /, 영어는 /en/, 중국어(간체)는 /zh/ 아래 같은 파일 이름으로 둡니다.
+   헤더 오른쪽 .lang 버튼 묶음이 지금 보고 있는 페이지의 다른 언어판으로 바로 넘겨 줍니다.
+   모바일에서도 메뉴를 열지 않고 바로 보이도록 햄버거 버튼 옆에 둡니다. */
 
-.hd nav a.lang-sw {
-  font-size: 13px;
-  padding: 4px 12px;
+.hd .lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+  padding: 3px 4px 3px 10px;
   border: 1px solid var(--line);
   border-radius: 100px;
+  color: var(--gray);
+  font-size: 15px;
 }
-.hd nav a.lang-sw:hover { border-color: var(--gray); }
+.hd .lang .ico { margin-right: 4px; }
+.hd .lang a {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gray-2);
+  padding: 7px 9px;
+  border-radius: 100px;
+}
+.hd .lang a:hover { color: var(--ink); background: var(--bg-soft); }
+.hd .lang a[aria-current] { color: #fff; background: var(--ink); }
 
 /* Pretendard 에는 중국어 간체 글자가 없어, 한자가 한국식 글꼴로 섞여 보이지 않도록
    중국어 페이지는 시스템의 간체 글꼴을 먼저 씁니다. 한글 자간 보정(-.15px)도 풉니다. */
@@ -799,9 +815,12 @@ html:lang(zh) body {
                'Source Han Sans SC', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   letter-spacing: 0;
 }
+html:lang(en) body { letter-spacing: 0; }
 /* keep-all 은 한국어 어절 단위 줄바꿈용입니다. 띄어쓰기가 없는 중국어에 쓰면 줄이 넘쳐 버립니다. */
 html:lang(zh) .hero .t-title { word-break: normal; }
 
 @media (max-width: 767px) {
-  .hd nav.open a.lang-sw { border: none; border-radius: 0; padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .hd .lang { order: 2; margin-left: auto; padding-left: 8px; }
+  .hd .lang a { padding: 7px 7px; }
+  .hd .nav-toggle { order: 3; margin-left: 4px; }
 }
