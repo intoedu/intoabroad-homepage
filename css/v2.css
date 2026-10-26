@@ -695,7 +695,7 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
   .dintro h2, .dsec h3 { font-size: 22px; }
   .dphone-num a { font-size: 30px; }
 
-  .hd nav, .site-header .nav { display: none; }
+  .site-header .nav { display: none; }
   .site-header .nav.open {
     display: flex;
     position: absolute;
@@ -712,32 +712,6 @@ a.card:hover { border-color: var(--gray); transform: translateY(-2px); }
     display: block; margin-left: auto;
     background: none; border: none;
     font-size: 22px; cursor: pointer; color: var(--ink);
-  }
-
-  .hd nav.open {
-    display: flex;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
-    padding: 8px 20px 18px;
-  }
-  .hd nav.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
-  .hd .nav-toggle {
-    display: block;
-    margin-left: auto;
-    background: none;
-    border: none;
-    font-size: 24px;
-    line-height: 0;
-    padding: 6px;
-    cursor: pointer;
-    color: var(--ink);
   }
 
   .cta-bar .cta-note, .cta-bar .btn-line { display: none; }
@@ -819,8 +793,42 @@ html:lang(en) body { letter-spacing: 0; }
 /* keep-all 은 한국어 어절 단위 줄바꿈용입니다. 띄어쓰기가 없는 중국어에 쓰면 줄이 넘쳐 버립니다. */
 html:lang(zh) .hero .t-title { word-break: normal; }
 
-@media (max-width: 767px) {
+/* 헤더 메뉴는 한국어·영어·중국어 중 가장 긴 글자(영어·중국어)와 언어 버튼까지 한 줄에 들어가야 합니다.
+   그보다 좁으면 글자가 두 줄로 깨지므로, 본문 모바일 전환(767px)보다 일찍 햄버거 메뉴로 바꿉니다. */
+.hd nav a { white-space: nowrap; }
+
+@media (max-width: 960px) {
+  .hd nav { display: none; }
+  .hd nav.open {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 20px 18px;
+  }
+  .hd nav.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .hd .nav-toggle {
+    display: block;
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 0;
+    padding: 6px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .hd nav.open a.btn-sm { margin-top: 14px; padding: 0 20px; border-bottom: none; text-align: center; }
   .hd .lang { order: 2; margin-left: auto; padding-left: 8px; }
-  .hd .lang a { padding: 7px 7px; }
   .hd .nav-toggle { order: 3; margin-left: 4px; }
+}
+
+@media (max-width: 767px) {
+  .hd .lang a { padding: 7px 7px; }
 }
