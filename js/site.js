@@ -5,21 +5,21 @@ const LANG = document.documentElement.lang.slice(0, 2);
 const T = LANG === 'en' ? {
   soon: 'Closing soon',
   closed: 'Applications closed',
-  noEndpoint: 'Online applications are not available yet. Please call +82-31-334-2414 or contact us on KakaoTalk.',
+  noEndpoint: 'Online applications are not available yet. Please call +82-31-674-0316 or contact us on KakaoTalk.',
   sent: 'Your inquiry has been received. We will contact you within 1 business day.',
-  failed: 'Sending failed. Please call +82-31-334-2414 or contact us on KakaoTalk.',
+  failed: 'Sending failed. Please call +82-31-674-0316 or contact us on KakaoTalk.',
 } : LANG === 'zh' ? {
   soon: '报名即将截止',
   closed: '报名已截止',
-  noEndpoint: '在线报名暂未开通，请拨打 +82-31-334-2414 或通过 KakaoTalk 咨询。',
+  noEndpoint: '在线报名暂未开通，请拨打 +82-31-674-0316 或通过 KakaoTalk 咨询。',
   sent: '咨询申请已提交，我们将在 1 个工作日内与您联系。',
-  failed: '提交失败，请拨打 +82-31-334-2414 或通过 KakaoTalk 咨询。',
+  failed: '提交失败，请拨打 +82-31-674-0316 或通过 KakaoTalk 咨询。',
 } : {
   soon: '신청 마감 임박',
   closed: '신청 마감',
-  noEndpoint: '아직 온라인 접수가 연결되지 않았습니다. 031-334-2414 또는 카톡 상담으로 문의해 주세요.',
+  noEndpoint: '아직 온라인 접수가 연결되지 않았습니다. 031-674-0316 또는 카톡 상담으로 문의해 주세요.',
   sent: '상담 신청이 접수되었습니다. 영업일 기준 1일 이내에 연락드리겠습니다.',
-  failed: '전송에 실패했습니다. 031-334-2414 또는 카톡 상담으로 문의해 주세요.',
+  failed: '전송에 실패했습니다. 031-674-0316 또는 카톡 상담으로 문의해 주세요.',
 };
 
 // 모바일 햄버거 메뉴
